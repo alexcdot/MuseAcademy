@@ -3,15 +3,15 @@
 import webapp2
 import jinja2
 import os
-from google.appengine.txt import db
+from google.appengine.ext import db
 
 def brain_waves(name='default'):
     return db.Key.from_path('users', name)
 
 class BrainWaves(db.Model):
-    calm_state_avg = db.DoubleProperty(required=True)
-    stress_state_avg = db.DoubleProperty(required=True)
-    list_gamma_values = db.ListProperty(item_type=double, required=True)
+    calm_state_avg = db.FloatProperty(required=True)
+    stress_state_avg = db.FloatProperty(required=True)
+    list_gamma_values = db.ListProperty(item_type=float, required=True)
 
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -47,7 +47,7 @@ class CalmState(BaseHandler):
         params = dict(calm_state=calm_state)
         self.render('param.html', **params)
 
-        if (calm_state != 0 && stress_state != 0):
+        if (calm_state != 0 and stress_state != 0):
             createAcct()
 
 class StressState(BaseHandler):
@@ -56,7 +56,7 @@ class StressState(BaseHandler):
         params = dict(stress_state=stress_state)
         self.render('param.html', **params)
 
-        if (calm_state != 0 && stress_state != 0):
+        if (calm_state != 0 and stress_state != 0):
             createAcct()
 
 class GammaWaveValue(BaseHandler):
