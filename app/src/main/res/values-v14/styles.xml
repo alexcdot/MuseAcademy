@@ -5,10 +5,10 @@
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Material">
+    <style name="AppBaseTheme" parent="FireMaterial">
         <!-- API 14 theme customizations can go here. -->
-        <item name="android:colorAccent">@color/accent_material_dark</item>
-        <item name="android:textColorPrimary">@color/accent_material_dark</item>
+        <item name="android:colorAccent">@color/accent_fire_material</item>
+        <item name="android:textColorPrimary">@color/accent_fire_material</item>
     </style>
 
 </resources>
