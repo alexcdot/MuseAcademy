@@ -159,7 +159,7 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
     private double dataPoint = 0;
     private int numVals = 0;
 
-    private int numDataPointPerSec = 30;
+    private int numDataPointPerSec = 20;
     private int timeBtwnRecordings = 1000 / numDataPointPerSec;
     private int timePerState = 5; // seconds
     private int maxAllowedNumVals = numDataPointPerSec * timePerState;
