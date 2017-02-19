@@ -26,4 +26,8 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     compile files('libs/libmuse_android.jar')
     compile files('libs/GraphView-4.2.1.jar')
+    compile files('libs/okhttp-3.6.0.jar')
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile files('libs/gson-2.3.1.jar')
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
 }
