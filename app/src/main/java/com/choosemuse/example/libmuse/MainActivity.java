@@ -153,9 +153,10 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
     private final double[] gammaBuffer = new double[6];
     private boolean gammaStale;
 
-    private char globalStateChar = 'A';
+    private char globalStateChar = '0';
     private double averageCalmState = 0;
     private double averageStressState = 0;
+    private double dataPoint = 0;
     private int numVals = 0;
 
     private int numDataPointPerSec = 30;
@@ -324,8 +325,7 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
             System.out.println("reached");
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create(); //Read Update
             alertDialog.setTitle("Calm Calibration");
-            alertDialog.setMessage("Remain calm for 3 seconds. Press 'Continue' when you're" +
-                    " ready.");
+            alertDialog.setMessage("Remain calm for 10 seconds. Press 'Continue' when you're ready.");
 
             alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
@@ -355,7 +355,6 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
                                     globalStateChar = 'C';
                                 }
                             });
-
                             alertDialog3.show();
                         }
                     });
@@ -695,12 +694,15 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
             case 'B':
                 averageStressState = (averageStressState + sum) / numVals;
                 break;
+            case 'C':
+                dataPoint = sum;
+                break; // no need to do anything
             default:
                 Log.e(TAG, "\n!!! ERROR: INVALID GLOBAL CHAR STATE\n");
                 break;
         }
 
-        if (numVals >= maxAllowedNumVals) {
+        if (numVals >= maxAllowedNumVals || globalStateChar == 'C') {
             // Send data to server
 
             URL url;
@@ -715,6 +717,9 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
                         url = new URL("http://brain-waves-21345.appspot.com/stress_state");
                         value = averageStressState;
                         break;
+                    case 'C':
+                        url = new URL("http://brain-waves-21345.appspot.com/gamma_value");
+                        value = dataPoint;
                     default:
                         url = new URL("");
                         Log.e(TAG, "\n!!! ERROR: INVALID GLOBAL CHAR STATE\n");
@@ -771,14 +776,11 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
             numVals = 0;
             averageCalmState = 0;
             averageStressState = 0;
+            dataPoint = 0;
         }
 
     // Update graph
-    l1.appendData(new
-
-    DataPoint(index, sum),
-
-    false,50);
+    l1.appendData(new DataPoint(index, sum), false,50);
 
     index++;
 }
