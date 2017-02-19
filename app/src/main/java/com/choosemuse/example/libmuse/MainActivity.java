@@ -11,6 +11,7 @@ import java.net.URL;
 import java.net.HttpURLConnection;
 import java.lang.ref.WeakReference;
 import java.lang.*;
+import java.lang.String;
 import java.util.List;
 
 import java.util.Timer;
@@ -152,9 +153,9 @@ public class MainActivity extends Activity implements OnClickListener {
     private double averageStressState = 0;
     private int numVals = 0;
 
-    private int numDataPointPerSec = 60;
+    private int numDataPointPerSec = 30;
     private int timeBtwnRecordings = 1000 / numDataPointPerSec;
-    private int timePerState = 10; // seconds
+    private int timePerState = 5; // seconds
     private int maxAllowedNumVals = numDataPointPerSec * timePerState;
 
     LineGraphSeries<DataPoint> l1;//, l2, l3, l4;
@@ -689,17 +690,13 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
         }
 
-
         if (numVals >= maxAllowedNumVals) {
             // Send data to server
 
             URL url;
-
             double value = 0;
-
             try {
                 switch (globalStateChar) {
-
                     case 'A':
                         url = new URL("http://brain-waves-21345.appspot.com/calm_state");
                         value = averageCalmState;
@@ -720,26 +717,42 @@ public class MainActivity extends Activity implements OnClickListener {
 
             HttpURLConnection urlConnection = null;
             try {
-
-                urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setDoOutput(true);
+                urlConnection.setRequestMethod("POST");
+                urlConnection.setRequestProperty("state", Double.toString(value));
                 urlConnection.setRequestProperty("Content-Type", "text/plain");
                 urlConnection.setChunkedStreamingMode(0);
 
                 OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
                 out.write(Double.toString(value).getBytes());
                 out.flush();
+                out.close();
 
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                InputStream err = new BufferedInputStream(urlConnection.getErrorStream());
                 StringBuilder sb = new StringBuilder();
-                BufferedReader r = new BufferedReader(new InputStreamReader(in), 1000);
-                for (String line = r.readLine(); line != null; line = r.readLine()) {
+
+                BufferedReader r = new BufferedReader(new InputStreamReader(err),1000);
+                for (String line = r.readLine(); line != null; line=r.readLine()){
                     sb.append(line);
                 }
-                in.close();
-            } catch (IOException e) {
-                Log.e(TAG, "\n!!! ERROR: CONNECTION FAILURE\n");
+                err.close();
+                int code = urlConnection.getResponseCode();
+                if (code >= 200 && code < 300) {
+                    ; // This is success
+                    String str = String.format("\n!!! SUCCESS: GOOD RESPONSE CODE: %i\n", code);
+                    Log.d(TAG, str);
+                }
+                else if (code >= 400 && code < 600) {
+                    String str = String.format("\n!!! ERROR: BAD RESPONSE CODE: %i\n", code);
+                    Log.d(TAG, str);
+                }
+                else {
+                    String str = String.format("\n!!! ERROR: CODE: %i\n", code);
+                    Log.d(TAG, str);
+                }
+            } catch (IOException e){
+                Log.d(TAG, "\n!!! ERROR: CONNECTION FAILURE\n");
             } finally {
                 urlConnection.disconnect();
             }
