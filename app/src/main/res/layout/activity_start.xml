@@ -12,13 +12,6 @@
     tools:context="com.choosemuse.example.libmuse.StartActivity"
     android:weightSum="1">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:textAlignment="center"
-        android:id="@+id/videoSearch"/>
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -30,7 +23,7 @@
             android:id="@+id/textView"
             android:layout_weight="0.02"
             android:textAppearance="@android:style/TextAppearance"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:textColor="?android:attr/actionMenuTextColor"
             android:textStyle="normal|bold"
             android:text="Start your learning experience here"
@@ -49,9 +42,9 @@
             android:layout_height="45dp"
             android:text="Submit"
             android:id="@+id/searchButton"
-            android:layout_weight="0.06"
+            android:layout_weight="0.02"
             android:textAppearance="@android:style/TextAppearance"
-            android:textSize="24sp"
+            android:textSize="36sp"
             android:textColor="@android:color/holo_orange_dark" />
 
         <LinearLayout
