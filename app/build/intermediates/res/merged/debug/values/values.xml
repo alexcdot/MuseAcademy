@@ -10,6 +10,7 @@
     <string name="disconnect">Disconnect</string>
     <string name="drop">Drop</string>
     <string name="eeg">EEG data:</string>
+    <string name="gamma">Absolute Gamma Values</string>
     <string name="hello_world">Hello world!</string>
     <string name="init_val">0.0</string>
     <string name="msg_count">Msg number, size: </string>

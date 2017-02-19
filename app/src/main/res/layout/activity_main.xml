@@ -13,8 +13,8 @@
 	    android:layout_height="60dp" />
 
 	<Button
-		android:text="Button"
-		android:layout_width="120dp"
+		android:text="Calibration"
+		android:layout_width="match_parent"
 		android:layout_height="61dp"
 		android:id="@+id/calibrate" />
 
