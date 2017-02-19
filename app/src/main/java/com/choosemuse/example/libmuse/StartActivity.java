@@ -42,7 +42,6 @@ public class StartActivity extends Activity {
 
                     Intent i = new Intent(getActivity(), MainActivity.class);
                     i.putExtra("ID", vid_id);
-                    Log.d("ID", vid_id);
                     startActivity(i);
 
 

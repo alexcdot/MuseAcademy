@@ -52,12 +52,6 @@
     	android:layout_weight="1"
     	android:textSize="16sp"
     	android:text="@string/undefined" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:text="@string/gamma" />
 	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -92,33 +86,22 @@
 	        android:textSize="16sp"
 	        android:text="@string/init_val" />
     </LinearLayout>
+	<com.google.android.youtube.player.YouTubePlayerView
+		android:id="@+id/youtube_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="30dp" />
 	<com.jjoe64.graphview.GraphView
 		android:layout_width="match_parent"
 		android:layout_height="200dip"
 		android:id="@+id/graph1" />
 	<TextView
-		android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:textSize="16sp"
-	    android:text="@string/version" />
-	<TextView
    	    android:id="@+id/version"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_weight="1"
-		android:textSize="16sp"
-		android:text="@string/undefined" />
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="45dp"
-		android:orientation="horizontal" >
-		<Button
-	            android:id="@+id/pause"
-	            android:layout_width="150dp"
-	            android:layout_height="40dp"
-	            android:text="@string/pause" />
-	</LinearLayout>
+		android:textSize="16sp"/>
+
 
 </LinearLayout>
 	</ScrollView>

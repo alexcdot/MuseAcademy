@@ -40,6 +40,10 @@ import com.choosemuse.libmuse.MuseManagerAndroid;
 import com.choosemuse.libmuse.MuseVersion;
 import com.choosemuse.libmuse.Result;
 import com.choosemuse.libmuse.ResultLevel;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -65,6 +69,7 @@ import android.bluetooth.BluetoothAdapter;
 
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
 
 /**
  * This example will illustrate how to connect to a Muse headband,
@@ -87,7 +92,7 @@ import android.support.v4.content.ContextCompat;
  * 7. You can pause/resume data transmission with the button at the bottom of the screen.
  * 8. To disconnect from the headband, press "Disconnect"
  */
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends YouTubeBaseActivity implements OnClickListener {
 
     /**
      * Tag used for logging purposes.
@@ -157,6 +162,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private int timeBtwnRecordings = 1000 / numDataPointPerSec;
     private int timePerState = 5; // seconds
     private int maxAllowedNumVals = numDataPointPerSec * timePerState;
+    public static final String API_KEY = "AIzaSyBZOU5n6IVdOn4_xdIq7OW240AQOBJZAdk";
 
     LineGraphSeries<DataPoint> l1;//, l2, l3, l4;
     int index = 3;
@@ -239,6 +245,21 @@ public class MainActivity extends Activity implements OnClickListener {
         // Start our asynchronous updates of the UI.
         handler.post(tickUi);
 
+        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        youTubePlayerView.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
+                if (null == youTubePlayer) return;
+                if (!wasRestored) {
+                    youTubePlayer.cueVideo(getIntent().getStringExtra("ID"));
+                }
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+              //  Toast.makeText(this, "Failed to initialize.", Toast.LENGTH_LONG).show();
+            }
+        });
         l1 = new LineGraphSeries<>();
 
         GraphView graph1 = (GraphView) findViewById(R.id.graph1);
@@ -299,15 +320,6 @@ public class MainActivity extends Activity implements OnClickListener {
                 muse.disconnect();
             }
 
-        } else if (v.getId() == R.id.pause) {
-
-            // The user has pressed the "Pause/Resume" button to either pause or
-            // resume data transmission.  Toggle the state and pause or resume the
-            // transmission on the headband.
-            if (muse != null) {
-                dataTransmission = !dataTransmission;
-                muse.enableDataTransmission(dataTransmission);
-            }
         } else if (v.getId() == R.id.calibrate) {
             System.out.println("reached");
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create(); //Read Update
@@ -591,8 +603,6 @@ public class MainActivity extends Activity implements OnClickListener {
         connectButton.setOnClickListener(this);
         Button disconnectButton = (Button) findViewById(R.id.disconnect);
         disconnectButton.setOnClickListener(this);
-        Button pauseButton = (Button) findViewById(R.id.pause);
-        pauseButton.setOnClickListener(this);
         Button calibrateButton = (Button) findViewById(R.id.calibrate);
         calibrateButton.setOnClickListener(this);
 
