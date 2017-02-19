@@ -97,7 +97,7 @@ public class MainActivity extends YouTubeBaseActivity implements OnClickListener
     /**
      * Tag used for logging purposes.
      */
-    private final String TAG = "TestLibMuseAndroid";
+    private final String TAG = "MuseAcademy";
 
     /**
      * The MuseManager is how you detect Muse headbands and receive notifications
