@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.choosemuse.example.libmuse"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 23
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_7
