@@ -1,0 +1,7 @@
+.gradle/2.14.1/taskArtifacts
+.gradle/2.14.1/tasks/
+.idea/
+app/app.iml
+app/build/
+build/intermediates
+local.properties
