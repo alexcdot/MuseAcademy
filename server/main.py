@@ -39,16 +39,7 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        self.render('content.html')
-
-class Data(BaseHandler):
-    def get(self):
-        self.redirect('/')
-
-    def post(self):
-        gamma = self.request.get('gamma')
-        params = dict(gamma=gamma)
-        self.render('param.html', **params)
+        self.render('index.html')
 
 class CalmState(BaseHandler):
     def post(self):
@@ -75,7 +66,6 @@ class GammaWaveValue(BaseHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/bw_index', Data),
     ('/calm_state', CalmState),
     ('/stress_state', StressState)
 ], debug=True)
