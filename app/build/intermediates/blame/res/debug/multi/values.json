@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/rebeccazhang/MuseAcademy/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/rebeccazhang/Desktop/MuseAcademy/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/dimens.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/dimens.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 218
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 271
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 379
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 423
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 473
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 511
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 553
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -197,11 +197,30 @@
                     "startLine": 12,
                     "startColumn": 4,
                     "startOffset": 558,
-                    "endColumn": 52,
-                    "endOffset": 606
+                    "endColumn": 55,
+                    "endOffset": 609
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 886,
+                        "endColumn": 55,
+                        "endOffset": 937
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endColumn": 52,
+                    "endOffset": 662
+                },
+                "from": {
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -213,14 +232,14 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 611,
+                    "startOffset": 667,
                     "endColumn": 40,
-                    "endOffset": 647
+                    "endOffset": 703
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -232,14 +251,14 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 652,
+                    "startOffset": 708,
                     "endColumn": 56,
-                    "endOffset": 704
+                    "endOffset": 760
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -251,14 +270,14 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 709,
+                    "startOffset": 765,
                     "endColumn": 53,
-                    "endOffset": 758
+                    "endOffset": 814
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -270,14 +289,14 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 763,
+                    "startOffset": 819,
                     "endColumn": 46,
-                    "endOffset": 805
+                    "endOffset": 861
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -289,39 +308,20 @@
             },
             {
                 "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 810,
-                    "endColumn": 241,
-                    "endOffset": 1047
-                },
-                "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 966,
-                        "endColumn": 241,
-                        "endOffset": 1203
-                    }
-                }
-            },
-            {
-                "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1052,
-                    "endColumn": 78,
-                    "endOffset": 1126
+                    "startOffset": 866,
+                    "endColumn": 241,
+                    "endOffset": 1103
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 887,
-                        "endColumn": 78,
-                        "endOffset": 961
+                        "startOffset": 1022,
+                        "endColumn": 241,
+                        "endOffset": 1259
                     }
                 }
             },
@@ -329,18 +329,18 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1131,
-                    "endColumn": 69,
-                    "endOffset": 1196
+                    "startOffset": 1108,
+                    "endColumn": 78,
+                    "endOffset": 1182
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 1208,
-                        "endColumn": 69,
-                        "endOffset": 1273
+                        "startOffset": 943,
+                        "endColumn": 78,
+                        "endOffset": 1017
                     }
                 }
             },
@@ -348,12 +348,31 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 1201,
-                    "endColumn": 43,
-                    "endOffset": 1240
+                    "startOffset": 1187,
+                    "endColumn": 69,
+                    "endOffset": 1252
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1264,
+                        "endColumn": 69,
+                        "endOffset": 1329
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1257,
+                    "endColumn": 43,
+                    "endOffset": 1296
+                },
+                "from": {
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -365,14 +384,14 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1245,
+                    "startOffset": 1301,
                     "endColumn": 53,
-                    "endOffset": 1294
+                    "endOffset": 1350
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -384,14 +403,14 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1299,
+                    "startOffset": 1355,
                     "endColumn": 45,
-                    "endOffset": 1340
+                    "endOffset": 1396
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -403,14 +422,14 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1345,
+                    "startOffset": 1401,
                     "endColumn": 44,
-                    "endOffset": 1385
+                    "endOffset": 1441
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/strings.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -422,15 +441,15 @@
             },
             {
                 "to": {
-                    "startLine": 24,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1390,
-                    "endLine": 30,
+                    "startOffset": 1446,
+                    "endLine": 31,
                     "endColumn": 12,
-                    "endOffset": 1676
+                    "endOffset": 1732
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/styles.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -443,15 +462,15 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 1681,
-                    "endLine": 33,
+                    "startOffset": 1737,
+                    "endLine": 34,
                     "endColumn": 12,
-                    "endOffset": 1836
+                    "endOffset": 1892
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values/styles.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,

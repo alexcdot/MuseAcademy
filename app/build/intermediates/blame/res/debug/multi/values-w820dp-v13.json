@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/rebeccazhang/MuseAcademy/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/Users/rebeccazhang/Desktop/MuseAcademy/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/rebeccazhang/MuseAcademy/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/Users/rebeccazhang/Desktop/MuseAcademy/app/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
