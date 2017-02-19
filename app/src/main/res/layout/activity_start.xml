@@ -13,13 +13,13 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:textAlignment="center"
         android:id="@+id/videoSearch"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:text="Submit"
         android:id="@+id/searchButton"/>
 
