@@ -1,7 +1,9 @@
 package com.choosemuse.example.libmuse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,14 +35,15 @@ public class StartActivity extends Activity {
                     url = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keywords + "&type=video&key=AIzaSyBZOU5n6IVdOn4_xdIq7OW240AQOBJZAdk";
                     String response = new Youtube().execute(url).get();
 
-                    Gson gson = new Gson();
-                    JSONObject json = gson.fromJson(response, JSONObject.class);
-                    vid_id = json.getJSONObject("items").getString("id").toString();
+                  //  Gson gson = new Gson();
+                    JSONObject json = new JSONObject(response);
+                    Log.d("JSON", response);
+                    vid_id = json.getJSONArray("items").getJSONObject(0).getJSONObject("id").get("videoId").toString();
 
-                    // youTubePlayerView.initialize(API_KEY, getMyself());
-
-                    //player.cueVideo(vid_id);
-                    //text.setText(vid_id);
+                    Intent i = new Intent(getActivity(), MainActivity.class);
+                    i.putExtra("ID", vid_id);
+                    Log.d("ID", vid_id);
+                    startActivity(i);
 
 
                 } catch (Exception e) {
@@ -49,6 +52,10 @@ public class StartActivity extends Activity {
                 }
             }
         });
+    }
+
+    Activity getActivity(){
+        return this;
     }
 
 }

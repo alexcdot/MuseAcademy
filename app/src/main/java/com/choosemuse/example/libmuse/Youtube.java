@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import android.util.Log;
 
 
 public class Youtube extends AsyncTask<String, Void, String> {
@@ -29,8 +30,7 @@ public class Youtube extends AsyncTask<String, Void, String> {
             int responseCode = urlConnection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 server_response = readStream(urlConnection.getInputStream());
-                //Log.v(TAG, response);
-                return null;
+                return server_response;
 
 
             }
