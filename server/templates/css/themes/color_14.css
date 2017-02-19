@@ -9,7 +9,7 @@ www.typeandgrids.com
 
 #sitePreloader { background-color: #000000; } /* Preloader GIF created with http://preloaders.net */
 body { background-color: #262626; }
-/*body { background: url("../../images/backgrounds/bg_01.png") repeat; }*/
+body { background: url("../../images/backgrounds/bg_36.png") repeat; /
 .thumbnailMask { background-image: url("../../images/masks/262626_01.png"); }
 header { border-color: #72f499; }
 #logo h1, #logoDetailView h1 { color: #eeeeee; }
