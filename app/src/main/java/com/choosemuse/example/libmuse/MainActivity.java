@@ -5,8 +5,12 @@
 
 package com.choosemuse.example.libmuse;
 
-import java.io.File;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.HttpURLConnection;
 import java.lang.ref.WeakReference;
+import java.lang.*;
 import java.util.List;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -141,7 +145,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private final double[] gammaBuffer = new double[6];
     private boolean gammaStale;
 
-    private char globalStateChar = '0';
+    private char globalStateChar = 'A';
     private double averageCalmState = 0;
     private double averageStressState = 0;
     private int numVals = 0;
@@ -191,7 +195,6 @@ public class MainActivity extends Activity implements OnClickListener {
      * 'C': Recording the stressed state
      * 'D': Recording the session
      */
-    private char globalStateChar = '0'
 
     //--------------------------------------
     // Lifecycle / Connection code
@@ -205,7 +208,7 @@ public class MainActivity extends Activity implements OnClickListener {
         // This must come before other LibMuse API calls as it also loads the library.
         manager = MuseManagerAndroid.getInstance();
         manager.setContext(this);
-        Button calibrate = (Button)findViewById(R.id.calibrate)
+        Button calibrate = (Button)findViewById(R.id.calibrate);
         Log.i(TAG, "LibMuse version=" + LibmuseVersion.instance().getString());
 
         WeakReference<MainActivity> weakActivity =
@@ -304,7 +307,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 muse.enableDataTransmission(dataTransmission);
             }
         }
-        else if (v.getId == R.id.calibrate)
+        else if (v.getId() == R.id.calibrate)
         {
 
         }
@@ -548,9 +551,7 @@ public class MainActivity extends Activity implements OnClickListener {
         Button pauseButton = (Button) findViewById(R.id.pause);
         pauseButton.setOnClickListener(this);
         Button calibrate = (Button) findViewById(R.id.calibrate);
-        pauseButton.setOnClickListener(this);
-        Button pauseButton = (Button) findViewById(R.id.pause);
-        pauseButton.setOnClickListener(this);
+        calibrate.setOnClickListener(this);
 
         spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
@@ -650,34 +651,48 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
         }
 
+
         if (numVals >= maxAllowedNumVals) {
             // Send data to server
-            Url url;
+
+            URL url;
+
             double value = 0;
 
-            switch(globalStateChar) {
-                case 'A':
-                    url = new URL("http://brain-waves-21345.appspot.com/calm_state")
-                    value = averageCalmState;
-                    break;
-                case 'B':
-                    url = new URL("http://brain-waves-21345.appspot.com/stress_state")
-                    value = averageStressState;
-                    break;
-                default:
-                    Log.e(TAG, "\n!!! ERROR: INVALID GLOBAL CHAR STATE\n");
-                    break;
-            }
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
             try {
+                switch (globalStateChar) {
+
+                    case 'A':
+                        url = new URL("http://brain-waves-21345.appspot.com/calm_state");
+                        value = averageCalmState;
+                        break;
+                    case 'B':
+                        url = new URL("http://brain-waves-21345.appspot.com/stress_state");
+                        value = averageStressState;
+                        break;
+                    default:
+                        url = new URL("");
+                        Log.e(TAG, "\n!!! ERROR: INVALID GLOBAL CHAR STATE\n");
+                        break;
+                }
+            }
+            catch (MalformedURLException e)
+            {
+                Log.e(TAG, "\n URL is bad!\n");
+                return;
+            }
+
+            HttpURLConnection urlConnection = null;
+            try {
+
+                urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setDoOutput(true);
-                urlConnection.setRequestMethod("POST");
                 urlConnection.setRequestProperty("Content-Type", "text/plain");
                 urlConnection.setChunkedStreamingMode(0);
 
                 OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-                out.write(value.getBytes());
+                out.write(Double.toString(value).getBytes());
                 out.flush();
 
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
@@ -687,8 +702,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     sb.append(line);
                 }
                 in.close();
-                return sb.toString();
-            } catch {
+            } catch (IOException e){
                 Log.e(TAG, "\n!!! ERROR: CONNECTION FAILURE\n");
             } finally {
                 urlConnection.disconnect();
