@@ -28,7 +28,7 @@
             android:layout_weight="0.02"
             android:textAppearance="@android:style/TextAppearance"
             android:textSize="26sp"
-            android:textColor="?android:attr/colorFocusedHighlight"
+            android:textColor="?android:attr/actionMenuTextColor"
             android:textStyle="normal|bold"
             android:text="Start your learning experience here"
             android:textAlignment="center"
@@ -45,10 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="Submit"
-            android:textColor="#6cccc3"
             android:id="@+id/searchButton"
             android:layout_weight="0.06"
-            android:textSize="18sp" />
+            android:textAppearance="@android:style/TextAppearance"
+            android:textSize="24sp"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <LinearLayout
             android:orientation="vertical"
