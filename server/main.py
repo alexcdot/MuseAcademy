@@ -26,6 +26,7 @@ def createAcct(self):
     new_acct = BrainWaves(parent=brain_waves_key(), calm_state=calm_state, stress_state=stress_state)
     new_acct.put()
 
+
 class BaseHandler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
@@ -63,9 +64,9 @@ class GammaWaveValue(BaseHandler):
     def post(self):
         data_point = self.request.get('data_point')
 
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/calm_state', CalmState),
-    ('/stress_state', StressState)
+    ('/stress_state', StressState),
+    ('/gamma_value', GammaWaveValue)
 ], debug=True)
