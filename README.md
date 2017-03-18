@@ -1,1 +1,5 @@
-MuseAcademy
+MuseAcademy is an integrative and innovative platform that allows educators to understand in real time when students struggle with learning material. Students use the Muse headband, which analyzes their brain waves through an Android application and sends powerful insights to educators in a web interface.
+
+Students are often intimidated to ask for help in big lecture halls or with fast-paced lessons. At an early age, many of these students could have communicative disorders that make it difficult for them to ask for help. With MuseAcademy, the barrier between educators and students disappears. With the brainwave data of the Muse headband, educators know when students need help the most.
+
+The Muse headband can capture a broad insight into the frequency and strength of a user's brainwaves through electroencephalography (EEG). The Muse gives you a data-rich glimpse into the alpha, beta, delta and gamma waves in your brain. MuseAcademy calibrates to your brainwaves, giving you a personalized recording of your academic comprehension throughout an entire learning session.
